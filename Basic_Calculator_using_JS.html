@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Calculator using JS</title>
+    <style>
+      * {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      p {
+        display: inline;
+        font-size: 30px;
+      }
+      .inputOne {
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 250px;
+      }
+      .inputTwo {
+        text-align: center;
+      }
+      input {
+        border-radius: 5px;
+        font-size: 30px;
+        size: 30;
+      }
+      .buttons {
+        margin-top: 10px;
+        text-align: center;
+      }
+      button {
+        font-size: 30px;
+        border-radius: 5px;
+      }
+
+      .alignResult {
+        text-align: center;
+        margin-top: 10px;
+      }
+      #result {
+        display: block;
+        line-height: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="inputOne">
+      <p>1st Number:</p>
+      <input type="text" id="numOne" size="15" maxlength="15" />
+    </div>
+
+    <div class="inputTwo">
+      <p>2nd Number:</p>
+      <input type="text" id="numTwo" size="15" maxlength="15" />
+    </div>
+
+    <div class="buttons">
+      <button onclick="addition()">ADD</button>
+      <button onclick="subtraction()">SUBTRACT</button>
+      <button onclick="multiplication()">MULTIPLY</button>
+      <button onclick="divide()">DIVIDE</button>
+    </div>
+
+    <div class="alignResult">
+      <p>The result is:</p>
+      <p id="result"></p>
+    </div>
+
+    <script type="text/javascript">
+      function addition() {
+        let num1 = document.getElementById("numOne").value;
+        let num2 = document.getElementById("numTwo").value;
+        let parsedNum1 = parseInt(num1);
+        let parsedNum2 = parseInt(num2);
+
+        let answerResult = parsedNum1 + parsedNum2;
+        showResult(answerResult);
+      }
+
+      function subtraction() {
+        let num1 = document.getElementById("numOne").value;
+        let num2 = document.getElementById("numTwo").value;
+        let parsedNum1 = parseInt(num1);
+        let parsedNum2 = parseInt(num2);
+
+        let answerResult = parsedNum1 - parsedNum2;
+        showResult(answerResult);
+      }
+
+      function multiplication() {
+        let num1 = document.getElementById("numOne").value;
+        let num2 = document.getElementById("numTwo").value;
+        let parsedNum1 = parseInt(num1);
+        let parsedNum2 = parseInt(num2);
+
+        let answerResult = parsedNum1 * parsedNum2;
+        showResult(answerResult);
+      }
+
+      function divide() {
+        let num1 = document.getElementById("numOne").value;
+        let num2 = document.getElementById("numTwo").value;
+        let parsedNum1 = parseInt(num1);
+        let parsedNum2 = parseInt(num2);
+
+        let answerResult = parsedNum1 / parsedNum2;
+        showResult(answerResult);
+      }
+
+      function showResult(result) {
+        document.getElementById("result").innerHTML = String(result);
+      }
+    </script>
+  </body>
+</html>
